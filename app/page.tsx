@@ -118,7 +118,7 @@ const projects = [
           <div className="space-y-8">
             <div className="space-y-8">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" data-linges="hero-title">
-                Hi, I'm <span className="text-[#00FF7F]">Lingesvran R.</span>
+                Hi, I&apos;m <span className="text-[#00FF7F]">Lingesvran R.</span>
               </h1>
               <div className="space-y-14">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-300" data-linges="hero-role">
@@ -209,7 +209,7 @@ const projects = [
                   With over <span className="text-[#00FF7F] font-semibold"> 2+ years </span> of real world design experience, I specialize in crafting thoughtful, user centric digital experiences that are both visually engaging and functionally sound. I love transforming abstract ideas into purposeful, intuitive interfaces that feel almost <span className="text-[#00FF7F] font-semibold">handmade</span> because they truly are.
                 </p>
                 <p>
-                 I follow a <span className="text-[#00FF7F] font-semibold">user-first</span> approach to design, where every element serves a clear purpose and every interaction feels natural. I'm continuously learning, experimenting, and refining because good design is never static.
+                 I follow a <span className="text-[#00FF7F] font-semibold">user first</span> approach to design, where every element serves a clear purpose and every interaction feels natural. I&apos;m continuously learning, experimenting, and refining because good design is never static.
                 </p>
               </div>
             </div>
@@ -518,7 +518,7 @@ const projects = [
       <section className="py-20 px-4 sm:px-6 lg:px-8" data-linges="contact-section">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="contact-title">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
