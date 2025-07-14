@@ -118,15 +118,15 @@ const projects = [
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" data-linges="hero-section">
-        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-18 items-center">
           {/* Left Side - Content */}
           <div className="space-y-10">
             <div className="space-y-10">
-              <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold leading-tight" data-linges="hero-title">
+              <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold leading-tight" data-linges="hero-title">
                 Hi, I&apos;m <span className="text-[#00FF7F]">Lingesvran R.</span>
               </h1>
               <div className="space-y-14">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-300" data-linges="hero-role">
+              <h2 className="text-xl sm:text-2xl lg:text-2xl font-semibold text-gray-300" data-linges="hero-role">
                 I blend thoughtful design and smart development to craft user-first digital experiences.
               </h2>
               <p className="text-lg sm:text-xl text-gray-400 max-w-xl leading-relaxed" data-linges="hero-description">
