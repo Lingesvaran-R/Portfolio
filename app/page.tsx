@@ -122,7 +122,7 @@ const projects = [
           {/* Left Side - Content */}
           <div className="space-y-8">
             <div className="space-y-8">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" data-linges="hero-title">
+              <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold leading-tight" data-linges="hero-title">
                 Hi, I&apos;m <span className="text-[#00FF7F]">Lingesvran R.</span>
               </h1>
               <div className="space-y-14">
@@ -160,7 +160,7 @@ const projects = [
 
           {/* Right Side - Creative Visualization */}
           <div className="flex items-center justify-center">
-            <div className="relative w-80 h-80 flex items-center justify-center">
+            <div className="relative w-72 h-72 flex items-center justify-center">
               {/* Rotating Hexagon */}
               <div className="absolute inset-0 border-2 border-[#00FF7F] rounded-lg transform rotate-45 animate-pulse"></div>
               <div className="absolute inset-4 border border-[#00FF7F]/50 rounded-lg transform -rotate-45 animate-pulse delay-1000"></div>
@@ -181,9 +181,9 @@ const projects = [
               
               {/* Center Text */}
               <div className="text-center z-10 mt-[-30px]">
-                <div className="text-[#00FF7F] text-2xl font-bold">UI/UX Designing</div>
+                <div className="text-[#00FF7F] text-1xl font-bold">UI/UX Designing</div>
                 <div className="text-gray-300 text-1xl">&</div>
-                <div className="text-[#00FF7F] text-2xl font-bold">Frontend Development</div>
+                <div className="text-[#00FF7F] text-1xl font-bold">Frontend Development</div>
               </div>
             </div>
           </div>
