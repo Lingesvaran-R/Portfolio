@@ -118,7 +118,7 @@ const projects = [
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" data-linges="hero-section">
-        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-18 items-center">
+        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
           <div className="space-y-10">
             <div className="space-y-10">
