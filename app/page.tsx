@@ -193,7 +193,7 @@ const projects = [
       {/* About Me Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="about-section">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
             <div className="order-2 lg:order-1">
               <div className="w-80 h-82 relative bg-gradient-to-br from-[#00FF7F]/20 to-[#00FF7F]/5 rounded-2xl border border-[#00FF7F]/30 mx-auto lg:mx-0 overflow-hidden">
   <img
