@@ -120,8 +120,8 @@ const projects = [
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" data-linges="hero-section">
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
-          <div className="space-y-8">
-            <div className="space-y-8">
+          <div className="space-y-10">
+            <div className="space-y-10">
               <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold leading-tight" data-linges="hero-title">
                 Hi, I&apos;m <span className="text-[#00FF7F]">Lingesvran R.</span>
               </h1>
@@ -159,31 +159,35 @@ const projects = [
           </div>
 
           {/* Right Side - Creative Visualization */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-72 h-72 flex items-center justify-center">
-              {/* Rotating Hexagon */}
-              <div className="absolute inset-0 border-2 border-[#00FF7F] rounded-lg transform rotate-45 animate-pulse"></div>
-              <div className="absolute inset-4 border border-[#00FF7F]/50 rounded-lg transform -rotate-45 animate-pulse delay-1000"></div>
-              <div className="absolute inset-8 border border-[#00FF7F]/30 rounded-lg transform rotate-45 animate-pulse delay-2000"></div>
-              
-              {/* Floating Tools with Icons */}
-<div className="absolute -top-6 -left-6 bg-[#1a1a1a] border border-[#00FF7F]/30 rounded-lg p-3 animate-bounce delay-1000">
-  <div className="w-6 h-6 bg-[#00FF7F] rounded flex items-center justify-center text-black text-lg">
-    <SiFigma />
-  </div>
-</div>
+          <div className="space-y-10">
+            <div className="space-y-10">
+<div className="flex justify-center lg:justify-end">
+  <div className="relative w-64 sm:w-72 md:w-80 h-64 sm:h-72 md:h-80 flex items-center justify-center">
 
-<div className="absolute -bottom-8 -right-8 bg-[#1a1a1a] border border-[#00FF7F]/30 rounded-lg p-3 animate-bounce delay-1000">
-  <div className="w-6 h-6 bg-[#00FF7F] rounded-full flex items-center justify-center text-black text-lg">
-    <SiHtml5 />
-  </div>
-</div>
-              
+    {/* Rotating Hexagon */}
+    <div className="absolute inset-0 border-2 border-[#00FF7F] rounded-lg transform rotate-45 animate-pulse" />
+    <div className="absolute inset-4 border border-[#00FF7F]/50 rounded-lg transform -rotate-45 animate-pulse delay-1000" />
+    <div className="absolute inset-8 border border-[#00FF7F]/30 rounded-lg transform rotate-45 animate-pulse delay-2000" />
+
+    {/* Floating Tools with Icons */}
+    <div className="absolute -top-6 -left-6 bg-[#1a1a1a] border border-[#00FF7F]/30 rounded-lg p-3 animate-bounce delay-1000">
+      <div className="w-6 h-6 bg-[#00FF7F] rounded flex items-center justify-center text-black text-lg">
+        <SiFigma />
+      </div>
+    </div>
+
+    <div className="absolute -bottom-8 -right-8 bg-[#1a1a1a] border border-[#00FF7F]/30 rounded-lg p-3 animate-bounce delay-1000">
+      <div className="w-6 h-6 bg-[#00FF7F] rounded-full flex items-center justify-center text-black text-lg">
+        <SiHtml5 />
+      </div>
+    </div>
+    </div>
+    </div> 
               {/* Center Text */}
               <div className="text-center z-10 mt-[-30px]">
-                <div className="text-[#00FF7F] text-1xl font-bold">UI/UX Designing</div>
+                <div className="text-[#00FF7F] text-2xl font-bold">UI/UX Designing</div>
                 <div className="text-gray-300 text-1xl">&</div>
-                <div className="text-[#00FF7F] text-1xl font-bold">Frontend Development</div>
+                <div className="text-[#00FF7F] text-2xl font-bold">Frontend Development</div>
               </div>
             </div>
           </div>
