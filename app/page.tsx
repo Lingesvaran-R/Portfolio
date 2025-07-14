@@ -181,9 +181,9 @@ const projects = [
     </div>
               {/* Center Text */}
               <div className="text-center z-10 mt-[-30px]">
-                <div className="text-[#00FF7F] text-2xl font-bold">UI/UX Designing</div>
+                <div className="text-[#00FF7F] text-1xl font-bold">UI/UX Designing</div>
                 <div className="text-gray-300 text-1xl">&</div>
-                <div className="text-[#00FF7F] text-2xl font-bold">Frontend Development</div>
+                <div className="text-[#00FF7F] text-1xl font-bold">Frontend Development</div>
               </div>
             </div>
           </div>
