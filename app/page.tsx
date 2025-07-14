@@ -1,4 +1,9 @@
-"use client";
+/* eslint-disable react/no-unescaped-entities */
+'use client'
+
+import React from 'react'
+// ...other imports
+
 
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
