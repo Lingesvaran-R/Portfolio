@@ -123,7 +123,7 @@ const projects = [
           <div className="space-y-10">
             <div className="space-y-10">
               <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold leading-tight" data-linges="hero-title">
-                Hi, I&apos;m <span className="text-[#00FF7F]">Lingesvran R.</span>
+                Hi, I&apos;m <span className="text-[#00FF7F]">Lingesvaran R.</span>
               </h1>
               <div className="space-y-14">
               <h2 className="text-xl sm:text-2xl lg:text-2xl font-semibold text-gray-300" data-linges="hero-role">
@@ -616,12 +616,12 @@ const projects = [
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2025 Lingesvran R. – Handcrafted UI/UX with <span className="text-[#00FF7F]">❤️</span>
+              © 2025 Lingesvaran R. – Handcrafted UI/UX with <span className="text-[#00FF7F]">❤️</span>
             </p>
             
             <div className="flex gap-4">
               <a 
-                href="https://linkedin.com/in/lingesvran" 
+                href="https://linkedin.com/in/lingesvaran" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#00FF7F] transition-colors"
@@ -629,7 +629,7 @@ const projects = [
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="https://github.com/lingesvran" 
+                href="https://github.com/lingesvaran-R" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#00FF7F] transition-colors"
