@@ -372,7 +372,7 @@ const projects = [
         <div className="md:col-span-2">
           <div className="space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed">
             <p>
-              From pouring concrete to crafting clean UI — my journey into design started with a shift in perspective. I come from a <span className="text-[#00FF7F] font-semibold">Civil Engineering background, but deep down, I was always drawn to creativity</span>. During college, I taught myself graphic design, spending late nights experimenting with layouts, type, and color. That passion evolved into something bigger UI/UX.
+              From pouring concrete to crafting clean UI my journey into design started with a shift in perspective. I come from a <span className="text-[#00FF7F] font-semibold">Civil Engineering background, but deep down, I was always drawn to creativity</span>. During college, I taught myself graphic design, spending late nights experimenting with layouts, type, and color. That passion evolved into something bigger UI/UX.
             </p>
 
             <p>
