@@ -203,10 +203,10 @@ const projects = [
 },
    {
     id: 'astrology-landing-page',
-    title: 'Astrology Landing Page – Calm & Soulful UX Design',
+    title: 'Astrology Landing Page Calm & Soulful UX Design',
     tools: 'Figma, HTML, CSS',
     description:
-      'This landing page was crafted for a traditional Indian astrology institute with a focus on cultural authenticity and clear UX. We began by understanding the audience, recognizing that knowing who will use the site is key to effective design. Inspired by traditional iconography and warm, earthy colors, the design conveys trust and expertise. Complex astrological content like daily charts and birth calculators is organized in an intuitive hierarchy so users can find insights quickly. The site is mobile-responsive, ensuring users can access horoscopes on any device. This project demonstrates thoughtful UX—it educates visitors and builds trust in the astrologers’ knowledge.',
+      'This landing page was crafted for a traditional Indian astrology institute with a focus on cultural authenticity and clear UX. We began by understanding the audience, recognizing that knowing who will use the site is key to effective design. Inspired by traditional iconography and warm, earthy colors, the design conveys trust and expertise. Complex astrological content like daily charts and birth calculators is organized in an intuitive hierarchy so users can find insights quickly. The site is mobile responsive, ensuring users can access horoscopes on any device. This project demonstrates thoughtful UX it educates visitors and builds trust in the astrologers’ knowledge.',
     hrNote:
       'Showcases culturally-aware UI/UX design, mobile responsiveness, and clear information architecture that builds user trust.',
     highlights: [
@@ -225,7 +225,7 @@ const projects = [
     title: 'Food Delivery Web & Mobile – Engaging Multi-Platform UX',
     tools: 'Figma, HTML, CSS',
     description:
-      'This project involved designing a seamless ordering experience for a restaurant food delivery platform across both web and mobile. We focused on simplifying the user journey: menus are presented with large, appetizing visuals, clean typography, and lots of breathing space to reduce cognitive load. The onboarding process was made effortless—users could sign up with minimal input and start ordering right away. Smart features like predictive dish search and personalized recommendations based on previous orders enhanced the experience. The result is a sleek, intuitive product that makes food discovery fast, familiar, and delightful.',
+      'This project involved designing a seamless ordering experience for a restaurant food delivery platform across both web and mobile. We focused on simplifying the user journey: menus are presented with large, appetizing visuals, clean typography, and lots of breathing space to reduce cognitive load. The onboarding process was made effortless users could sign up with minimal input and start ordering right away. Smart features like predictive dish search and personalized recommendations based on previous orders enhanced the experience. The result is a sleek, intuitive product that makes food discovery fast, familiar, and delightful.',
     hrNote:
       'Demonstrates ability to design engaging, high-conversion UI for fast-moving consumer apps with attention to both aesthetics and flow.',
     highlights: [
@@ -243,7 +243,7 @@ const projects = [
     title: 'Learnlike Coaching Center – High-Trust Educational UX',
     tools: 'Figma, HTML, CSS',
     description:
-      'This landing page was created for Learnlike, an academic and career coaching institute. The design balances professional structure with welcoming simplicity. We emphasized clarity—each section clearly presents programs, expert profiles, testimonials, and outcomes so users can find what matters most. Strong, high-contrast calls-to-action invite students to book a free consultation or explore programs. Subtle animations and smart content blocks create a trustworthy, modern experience that reflects Learnlike’s values. From mobile to desktop, everything flows smoothly and encourages user action without overwhelming them.',
+      'This landing page was created for Learnlike, an academic and career coaching institute. The design balances professional structure with welcoming simplicity. We emphasized clarity each section clearly presents programs, expert profiles, testimonials, and outcomes so users can find what matters most. Strong, high-contrast calls to action invite students to book a free consultation or explore programs. Subtle animations and smart content blocks create a trustworthy, modern experience that reflects Learnlike’s values. From mobile to desktop, everything flows smoothly and encourages user action without overwhelming them.',
     hrNote:
       'Highlights proficiency in conversion-based layout thinking, structured content design, and trust-building visual language tailored for academic services.',
     highlights: [
