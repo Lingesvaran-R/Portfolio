@@ -16,16 +16,67 @@ import { Mail, Phone, ExternalLink, Github, Linkedin, X } from 'lucide-react';
 import { SiFigma } from "react-icons/si";
 import { SiAdobecreativecloud } from "react-icons/si";
 import { SiHtml5  } from "react-icons/si";
+import { motion, AnimatePresence } from 'framer-motion';
+import { useGesture } from '@use-gesture/react';
+import { useSpring, animated } from '@react-spring/web';
+import { useRef } from 'react';
 import Image from 'next/image';
+import Zoom from 'react-medium-image-zoom';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import 'react-medium-image-zoom/dist/styles.css';
+import { useEffect} from "react";
+
 
 
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+const [selectedProject, setSelectedProject] = useState<string | null>(null);
+const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const [{ x }, api] = useSpring(() => ({ x: 0 }));
+const [isFullscreen, setIsFullscreen] = useState(false);
+const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+const bind = useGesture(
+  {
+    onDrag: ({ down, movement: [mx], direction, distance: [dx], cancel }) => {
+  const xDir = direction[0]; // safely extract the x direction
+
+      if (down && Math.abs(dx) > 80) {
+        cancel?.();
+
+        const newIndex =
+          xDir > 0
+            ? (currentImageIndex === 0 ? (project?.images?.length ?? 1) - 1 : currentImageIndex - 1)
+            : (currentImageIndex + 1) % (project?.images?.length ?? 1);
+        setCurrentImageIndex(newIndex);
+        api.start({ x: 0 });
+      } else {
+        api.start({ x: down ? mx : 0 });
+      }
+    }
+  },
+  { drag: { axis: 'x', filterTaps: true } }
+);
+
+
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [touchStartX, setTouchStartX] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
+    
   });
+useEffect(() => {
+  if (selectedProject) {
+    timeoutRef.current = setInterval(() => {
+      setCurrentImageIndex((prev) => {
+        const images = projects.find(p => p.id === selectedProject)?.images || [];
+        return (prev + 1) % images.length;
+      });
+    }, 10000); // every 10s
+
+    return () => clearInterval(timeoutRef.current as NodeJS.Timeout);
+  }
+}, [selectedProject]);
 
   console.log("Portfolio page rendered");
 
@@ -54,57 +105,159 @@ export default function Home() {
 
 const projects = [
   {
-    id: 'elite-wash',
-    title: 'Elite Wash – Mobile App UI/UX Design for Laundry Services',
-    tools: 'Figma',
-    description:
-      'Elite Wash is a full scale mobile app project I designed to streamline the laundry booking experience in urban India. From day one, I approached this not just as a visual designer but as a problem solver starting with real user interviews and empathy mapping to uncover common frustrations in traditional laundry services. The design was focused on making the process fast, intuitive, and mobile first, ensuring every touchpoint from login to pickup confirmation was effortless. I created the full UX journey, wireframes, and visual design, all aligned to scalable design principles and responsive UI.',
-    hrNote: 'This project showcases my ability to think holistically not just about UI, but about user needs, tech limitations, and brand clarity. It reflects my end to end capability, from UX research to pixel ready design delivery, with developer friendly documentation.',
-    highlights: [
-      'Comprehensive UX Research & Empathy Mapping',
-      'End-to-End Product Design Workflow',
-      'Mobile-First Responsive Architecture',
-      'High-Fidelity Prototypes & Clean Visual System'
-    ],
-    images: [
-      '/images/projects/elite-wash/1.png'
-    ]
-  },
-  {
-    id: 'astrology',
+  id: 'home-service',
+  title: 'Home Service – Mobile App UI/UX Design for On-Demand Home Maintenance (Case Study)',
+  tools: 'Figma',
+  description:
+    'Home Service is a mobile app project I designed to simplify booking and managing a variety of home maintenance services, from cleaning to plumbing and electrical work. I began by interviewing homeowners and service providers to identify their needs and concerns. The design focused on building user trust and ease of use, with features like verified professionals, transparent pricing, and straightforward scheduling. The UI uses a warm, approachable color scheme and clear navigation, guiding users from selecting a service to confirming an appointment quickly and confidently.',
+  hrNote: 'This project highlights my ability to design comprehensive service platforms that address real user concerns like safety and convenience. It demonstrates my skill in organizing diverse service information and creating a cohesive, trustworthy user experience. It also reflects my end-to-end design process from research to high-fidelity prototype.',
+  highlights: [
+    'Extensive Service Catalog & Search',
+    'Verified Professionals & Ratings',
+    'Streamlined Scheduling Flow',
+    'Clean, Trustworthy Interface'
+  ],
+  images: [
+    '/images/projects/home-service/1.png',
+    '/images/projects/home-service/2.png',
+    '/images/projects/home-service/3.png',
+    '/images/projects/home-service/4.png',
+    '/images/projects/home-service/5.png',
+    '/images/projects/home-service/6.png',
+    '/images/projects/home-service/7.png',
+    '/images/projects/home-service/8.png',
+    '/images/projects/home-service/9.png',
+    '/images/projects/home-service/10.png',
+    '/images/projects/home-service/11.png',
+    '/images/projects/home-service/12.png',
+    '/images/projects/home-service/13.png',
+    '/images/projects/home-service/14.png',
+    '/images/projects/home-service/15.png',
+    '/images/projects/home-service/16.png',
+    '/images/projects/home-service/17.png',
+    '/images/projects/home-service/18.png',
+    '/images/projects/home-service/19.png',
+    '/images/projects/home-service/20.png'
+  ]
+},
+{
+  id: 'bikeservice',
+  title: 'Bike Service – Mobile App UI/UX Design for Two-Wheeler Maintenance (Case Study)',
+  tools: 'Figma',
+  description:
+    'Bike Service is a full-scale mobile app project I designed to simplify scheduling and managing maintenance and repair services for two-wheeler owners. From the start, I approached this project by interviewing bikers and mechanics to understand common pain points in bike servicing. The app focuses on an intuitive booking flow, real-time status updates, and transparent pricing. The UI features clean iconography of bikes and services, progress indicators, and a streamlined workflow that guides users from selecting a service to booking in just a few taps.',
+  hrNote: 'This project showcases my ability to design efficient mobile experiences for on-demand services and to translate user insights into practical features. It highlights my end-to-end UX process from research to high-fidelity design, and my skill in simplifying a complex service flow into a user-friendly interface.',
+  highlights: [
+    'User-Centered Research & Personas',
+    'Streamlined Service Booking Flow',
+    'Real-Time Progress Tracking',
+    'Clear, Intuitive Iconography'
+  ],
+  images: [
+    '/images/projects/bikeservice/1.png',
+    '/images/projects/bikeservice/2.png',
+    '/images/projects/bikeservice/3.png',
+    '/images/projects/bikeservice/4.png',
+    '/images/projects/bikeservice/5.png',
+    '/images/projects/bikeservice/6.png',
+    '/images/projects/bikeservice/7.png',
+    '/images/projects/bikeservice/8.png',
+    '/images/projects/bikeservice/9.png',
+    '/images/projects/bikeservice/10.png',
+    '/images/projects/bikeservice/11.png',
+    '/images/projects/bikeservice/12.png',
+    '/images/projects/bikeservice/13.png',
+    '/images/projects/bikeservice/14.png',
+    '/images/projects/bikeservice/15.png',
+    '/images/projects/bikeservice/16.png',
+    '/images/projects/bikeservice/17.png',
+    '/images/projects/bikeservice/18.png',
+    '/images/projects/bikeservice/19.png',
+    '/images/projects/bikeservice/20.png'
+  ]
+},
+{
+  id: 'elite-wash',
+  title: 'Elite Wash – Mobile App UI/UX Design for Laundry Services (Case Study)',
+  tools: 'Figma',
+  description:
+    'Elite Wash is a full scale mobile app project I designed to streamline the laundry booking experience in urban India. From day one, I approached this not just as a visual designer but as a problem solver starting with real user interviews and empathy mapping to uncover common frustrations in traditional laundry services. The design was focused on making the process fast, intuitive, and mobile first, ensuring every touchpoint from login to pickup confirmation was effortless. I created the full UX journey, wireframes, and visual design, all aligned to scalable design principles and responsive UI.',
+  hrNote: 'This project showcases my ability to think holistically not just about UI, but about user needs, tech limitations, and brand clarity. It reflects my end to end capability, from UX research to pixel ready design delivery, with developer friendly documentation.',
+  highlights: [
+    'Comprehensive UX Research & Empathy Mapping',
+    'End-to-End Product Design Workflow',
+    'Mobile-First Responsive Architecture',
+    'High-Fidelity Prototypes & Clean Visual System'
+  ],
+  images: [
+    '/images/projects/elite-wash/1.png',
+    '/images/projects/elite-wash/2.png',
+    '/images/projects/elite-wash/3.png',
+    '/images/projects/elite-wash/4.png',
+    '/images/projects/elite-wash/5.png',
+    '/images/projects/elite-wash/6.png',
+    '/images/projects/elite-wash/7.png',
+    '/images/projects/elite-wash/8.png',
+    '/images/projects/elite-wash/9.png'
+  ]
+},
+   {
+    id: 'astrology-landing-page',
     title: 'Astrology Landing Page – Calm & Soulful UX Design',
     tools: 'Figma, HTML, CSS',
     description:
-      'This landing page was designed for a traditional Nadi astrology institution transitioning to the digital space. The challenge was to balance modern usability with cultural and spiritual storytelling something that connects deeply with the Indian audience and still feels premium online. I conducted brief stakeholder interviews to understand their core offering and emotional value. The UI features soft gradients, sacred imagery, and a clear visual hierarchy that helps users trust the service. It gently guides users from awareness to booking in a single scroll.',
-    hrNote: 'This project highlights my skill in brand-sensitive design. It demonstrates empathy not just toward users, but also toward legacy institutions seeking digital transformation. It also shows my comfort designing for emotionally nuanced topics like culture and belief.',
+      'This landing page was crafted for a traditional Indian astrology institute with a focus on cultural authenticity and clear UX. We began by understanding the audience, recognizing that knowing who will use the site is key to effective design. Inspired by traditional iconography and warm, earthy colors, the design conveys trust and expertise. Complex astrological content like daily charts and birth calculators is organized in an intuitive hierarchy so users can find insights quickly. The site is mobile-responsive, ensuring users can access horoscopes on any device. This project demonstrates thoughtful UX—it educates visitors and builds trust in the astrologers’ knowledge.',
+    hrNote:
+      'Showcases culturally-aware UI/UX design, mobile responsiveness, and clear information architecture that builds user trust.',
     highlights: [
-      'Emotionally Intelligent UX Design',
-      'Soft Gradient & Spiritual Visual Aesthetic',
-      'User Journey Mapping Based on Real Conversations',
-      'Highly Intuitive, Clean Layout'
+      'Cultural UX design with traditional color palettes and motifs',
+      'Responsive layout designed for mobile and tablet users',
+      'Trust-focused branding and visual consistency',
+      'Intuitive organization of complex spiritual content'
     ],
     images: [
-      '/images/projects/astrology/1.png'
+      '/images/projects/astrology/1.png',
+      '/images/projects/astrology/2.png'
     ]
   },
   {
-    id: 'pet-online-landing',
-    title: 'Pet Service Landing Page – Responsive Web Design',
-    tools: 'Figma, Adobe XD',
+    id: 'food-delivery-web-mobile',
+    title: 'Food Delivery Web & Mobile – Engaging Multi-Platform UX',
+    tools: 'Figma, HTML, CSS',
     description:
-      'This responsive landing page was created for a pet care startup that offers grooming, walking, and home pickup. I designed it to be lighthearted and lovable while still focusing on conversion, performance, and trust building. The UI combines playful design with strong CTAs, carefully placed social proof, and accessible forms. From layout to iconography, the entire experience was designed to look great on both desktop and mobile, with a clean modular structure that’s easy to scale into a full platform later.',
-    hrNote: 'This case shows my understanding of user retention and micro-conversions, as well as my comfort working on marketing-driven UX. It also reflects strong design system thinking, important for team scalability.',
+      'This project involved designing a seamless ordering experience for a restaurant food delivery platform across both web and mobile. We focused on simplifying the user journey: menus are presented with large, appetizing visuals, clean typography, and lots of breathing space to reduce cognitive load. The onboarding process was made effortless—users could sign up with minimal input and start ordering right away. Smart features like predictive dish search and personalized recommendations based on previous orders enhanced the experience. The result is a sleek, intuitive product that makes food discovery fast, familiar, and delightful.',
+    hrNote:
+      'Demonstrates ability to design engaging, high-conversion UI for fast-moving consumer apps with attention to both aesthetics and flow.',
     highlights: [
-      'Mobile-First & Cross-Device Responsive Design',
-      'Clear Visual Hierarchy & Consistent Branding',
-      'Seamless Booking Flow',
-      'Accessibility-Focused User Interface'
+      'Streamlined food ordering journey with minimal friction',
+      'Visually appealing interface that drives appetite and engagement',
+      'Smart search and filtering for faster navigation',
+      'One-click reorders with personalized food suggestions'
     ],
     images: [
-      '/images/projects/pet-online-landing/1.png'
+      '/images/projects/food/1.png'
+    ]
+  },
+  {
+    id: 'learnlike-landing-page',
+    title: 'Learnlike Coaching Center – High-Trust Educational UX',
+    tools: 'Figma, HTML, CSS',
+    description:
+      'This landing page was created for Learnlike, an academic and career coaching institute. The design balances professional structure with welcoming simplicity. We emphasized clarity—each section clearly presents programs, expert profiles, testimonials, and outcomes so users can find what matters most. Strong, high-contrast calls-to-action invite students to book a free consultation or explore programs. Subtle animations and smart content blocks create a trustworthy, modern experience that reflects Learnlike’s values. From mobile to desktop, everything flows smoothly and encourages user action without overwhelming them.',
+    hrNote:
+      'Highlights proficiency in conversion-based layout thinking, structured content design, and trust-building visual language tailored for academic services.',
+    highlights: [
+      'Clean layout with focus on structured educational content',
+      'Responsive design optimized across all screen sizes',
+      'Clear CTAs and conversion-friendly structure',
+      'Visual trust-building with expert bios and testimonials'
+    ],
+    images: [
+      '/images/projects/learnlike/1.png',
+      '/images/projects/learnlike/2.png'
     ]
   }
-];
+]
 
   const skills = {
     design: ['Figma', 'Adobe XD'],
@@ -113,8 +266,7 @@ const projects = [
     soft: ['Creative Thinking', 'Problem Solving', 'Team Collaboration', 'Time Management', 'Adaptability', 'Quick Learning']
   };
 
-  const project = selectedProject ? projects.find(p => p.id === selectedProject) : null;
-  return (
+  const project = selectedProject ? projects.find((p) => p.id === selectedProject) : null;  return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" data-linges="hero-section">
@@ -190,37 +342,57 @@ const projects = [
         </div>
       </section>
 
-      {/* About Me Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="about-section">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="w-80 h-82 relative bg-gradient-to-br from-[#00FF7F]/20 to-[#00FF7F]/5 rounded-2xl border border-[#00FF7F]/30 mx-auto lg:mx-0 overflow-hidden">
-  <img
-    src="/images/profile.jpg"  // ⬅️ your image path here
-    alt="Lingesvaran - UI/UX Designer"
-    className="object-cover w-full h-full rounded-2xl"
-  />
-</div>
-</div>
-            
-            <div className="order-1 lg:order-2 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-8" data-linges="about-title">About Me</h2>
-              <div className="prose prose-lg text-gray-300 leading-relaxed space-y-4">
-                <p>
-                  I come from a Civil Engineering background, but my true <span className="text-[#00FF7F] font-semibold">passion</span> has always been design. While in college, I began self learning graphic design, gradually transitioning into UI/UX through dedicated study and hands on projects. Eventually, I earned a UI/UX certification to formalize my skill set.
-                </p>
-                <p>
-                  With over <span className="text-[#00FF7F] font-semibold"> 2+ years </span> of real world design experience, I specialize in crafting thoughtful, user centric digital experiences that are both visually engaging and functionally sound. I love transforming abstract ideas into purposeful, intuitive interfaces that feel almost <span className="text-[#00FF7F] font-semibold">handmade</span> because they truly are.
-                </p>
-                <p>
-                 I follow a <span className="text-[#00FF7F] font-semibold">user first</span> approach to design, where every element serves a clear purpose and every interaction feels natural. I&apos;m continuously learning, experimenting, and refining because good design is never static.
-                </p>
-              </div>
-            </div>
+     {/* Unique About Section */}
+<section className="relative py-24 px-6 sm:px-10 bg-[#0e0e0e]" data-linges="about-unique">
+  <div className="max-w-6xl mx-auto relative z-10">
+    {/* Section Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-[#00FF7F] mb-4">Who I Am</h2>
+      <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+        Designing thoughtful experiences with code, color & clarity.
+      </p>
+    </div>
+
+    {/* Content Container */}
+    <div className="relative bg-[#1a1a1a]/60 backdrop-blur-lg rounded-2xl border border-[#00FF7F]/20 shadow-xl p-8 sm:p-10 text-gray-200 hover:shadow-[#00FF7F]/20 transition-shadow duration-500">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+        
+        {/* Profile Image */}
+        <div className="flex justify-center md:justify-start">
+          <div className="w-92 h-92 rounded-xl overflow-hidden border border-[#00FF7F]/30 bg-[#121212] shadow-inner">
+            <img
+              src="/images/profile.jpg"
+              alt="Lingesvaran"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+            />
           </div>
         </div>
-      </section>
+
+        {/* About Text */}
+        <div className="md:col-span-2">
+          <div className="space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed">
+            <p>
+              From pouring concrete to crafting clean UI — my journey into design started with a shift in perspective. I come from a <span className="text-[#00FF7F] font-semibold">Civil Engineering background, but deep down, I was always drawn to creativity</span>. During college, I taught myself graphic design, spending late nights experimenting with layouts, type, and color. That passion evolved into something bigger UI/UX.
+            </p>
+
+            <p>
+              Today, with <span className="text-[#00FF7F] font-semibold">2+ years</span> of real world experience in UI/UX design and frontend development, I focus on building digital experiences that are both visually compelling and deeply usable. Whether it's a dashboard, a service app, or a landing page, I prioritize function over fluff  <span className="text-[#00FF7F] font-semibold">clarity</span>, not just decoration.
+            </p>
+
+            <p>
+              My approach is always human first. I design with empathy, intent, and logic. Every pixel I place has a reason behind it. I'm someone who thrives in <span className="text-[#00FF7F] font-semibold">problem solving, iteration, and team collaboration</span>. Tools evolve, trends shift but what stays is good thinking and good design. That’s what I bring to every project.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Background Glow */}
+  <div className="absolute -top-16 left-0 w-72 h-72 bg-[#00FF7F]/10 rounded-full blur-3xl animate-pulse" />
+  <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#00FF7F]/5 rounded-full blur-2xl animate-pulse" />
+</section>
+
 
       {/* Professional Experience Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" data-linges="experience-section">
@@ -299,7 +471,11 @@ const projects = [
               <Card 
                 key={project.id}
                 className="bg-black border-[#00FF7F]/30 hover:border-[#00FF7F]/60 transition-all duration-300 cursor-pointer group hover:shadow-lg hover:shadow-[#00FF7F]/20"
-                onClick={() => setSelectedProject(project.id)}
+                onClick={() => {
+  setSelectedProject(project.id);
+  setCurrentImageIndex(0);
+}}
+
               >
                 <CardContent className="p-6">
                   <div className="space-y-4">
@@ -321,85 +497,119 @@ const projects = [
           </div>
         </div>
       </section>
-
-     {/* Project Modal */}
+{/* Project Modal */}
 {project && (
-  <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <div className="bg-[#1a1a1a] border border-[#00FF7F]/30 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-6">
-          <h3 className="text-2xl font-bold text-[#00FF7F]">
-            {project.title}
-          </h3>
-          <Button 
-            variant="ghost" 
-            size="sm"
-            onClick={() => setSelectedProject(null)}
-            className="text-gray-400 hover:text-white"
-          >
-            <X className="w-4 h-4" />
-          </Button>
-        </div>
+  <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm text-white flex items-center justify-center p-4">
+    <div className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-[#111] border border-[#00FF7F]/30 rounded-xl shadow-lg scrollbar-hide">
 
-        <div className="space-y-6">
-          <p className="text-sm text-gray-400 font-medium">
-            🛠️ {project.tools}
-          </p>
-
-          <p className="text-gray-300 leading-relaxed">
-            {project.description}
-          </p>
-
-           {/* HR Note */}
-          {project.hrNote && (
-            <div className="space-y-2">
-              <h4 className="font-semibold text-[#00FF7F]">
-                For HR / Institutions:
-              </h4>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {project.hrNote}
-              </p>
-            </div>
-          )}
-
-          {project.highlights && (
-            <div className="space-y-3">
-              <h4 className="font-semibold text-[#00FF7F]">Key Highlights:</h4>
-              <ul className="space-y-2">
-                {project.highlights.map((highlight, index) => (
-                  <li key={index} className="flex items-start gap-2 text-gray-300">
-                    <span className="text-[#00FF7F] mt-1">•</span>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-        
-          {/* ✅ Images */}
-        {project.images && (
-  <div className="flex flex-wrap gap-4 justify-start items-start pt-4">
-    <h4 className="font-semibold text-[#00FF7F]">Visual Journey Through the Design:</h4>
-    {project.images.map((img, index) => (
-        <div
-        key={index}
-        className="bg-[#111] rounded-xl shadow-md border border-white/10 overflow-hidden hover:scale-105 transition-transform duration-300"
-      >
-        <img
-          src={img}
-          alt={`Project Image ${index + 1}`}
-          className="w-full h-auto object-cover"
-        />
+      {/* Sticky Header */}
+      <div className="sticky top-0 z-20 bg-[#111] border-b border-white/10 flex items-center justify-between px-6 py-4">
+        <h3 className="text-xl sm:text-2xl font-bold text-[#00FF7F]">
+          {project.title}
+        </h3>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => setSelectedProject(null)}
+          className="text-gray-400 hover:text-white"
+        >
+          <X className="w-5 h-5" />
+        </Button>
       </div>
-    ))}
+
+      {/* Content */}
+      <div className="px-6 py-6 space-y-8 text-sm sm:text-base">
+
+        {/* Tools */}
+        {project.tools && (
+          <p className="text-gray-400 font-medium">
+            🛠 Tools: <span className="text-white">{project.tools}</span>
+          </p>
+        )}
+
+        {/* Description */}
+        {project.description && (
+          <p className="text-gray-300 leading-relaxed">{project.description}</p>
+        )}
+
+        {/* Highlights */}
+        {project.highlights && (
+          <div>
+            <h4 className="text-[#00FF7F] font-semibold mb-2">✨ Key Highlights:</h4>
+            <ul className="space-y-2 list-disc list-inside text-gray-300">
+              {project.highlights.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* HR Note */}
+        {project.hrNote && (
+          <div className="bg-[#1a1a1a] border border-[#00FF7F]/10 p-4 rounded-lg">
+            <h4 className="text-[#00FF7F] font-semibold mb-2">Note to Reviewers:</h4>
+            <p className="text-gray-300 text-sm leading-relaxed">{project.hrNote}</p>
+          </div>
+        )}
+
+        {/* Fullscreen Image Stack Showcase */}
+        {project.images && (
+          <div className="space-y-6">
+            {project.images.map((img, i) => (
+              <div
+                key={i}
+                className="w-full bg-black rounded-lg overflow-hidden shadow border border-[#00FF7F]/10"
+              >
+                <img
+                  src={img}
+                  alt={`Showcase ${i + 1}`}
+                  className="w-full h-auto object-contain cursor-zoom-in"
+                  onClick={() => {
+                    setFullscreenImage(img);
+                    setIsFullscreen(true);
+                  }}
+                  draggable={false}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+        {isFullscreen && fullscreenImage && (
+  <div className="fixed inset-0 z-[100] bg-black flex items-center justify-center">
+    <TransformWrapper
+      initialScale={0.5}
+      minScale={0.5}
+      maxScale={5}
+      doubleClick={{ mode: 'toggle' }}
+      wheel={{ step: 100 }}
+      pinch={{ step: 5 }}
+      panning={{ velocityDisabled: false }}
+      limitToBounds={false}
+      centerOnInit={true}
+    >
+      <TransformComponent wrapperStyle={{ width: '100vw', height: '100vh' }}>
+        <img
+          src={fullscreenImage}
+          alt="Zoom View"
+          className="select-none touch-none object-contain w-auto h-auto max-w-none max-h-none"
+          draggable={false}
+        />
+      </TransformComponent>
+    </TransformWrapper>
+
+    <button
+      onClick={() => setIsFullscreen(false)}
+      className="absolute top-5 right-5 z-[110] bg-black/70 hover:bg-black/90 text-white px-4 py-2 rounded-lg border border-white/10 shadow"
+    >
+      ❌ Close
+    </button>
   </div>
-          )}
-        </div>
+)}
       </div>
     </div>
   </div>
 )}
+
 
       {/* Skills Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" data-linges="skills-section">
