@@ -107,7 +107,7 @@ const projects = [
   {
   id: 'home-service',
   title: 'Home Service – Mobile App UI/UX Design for On-Demand Home Maintenance (Case Study)',
-  tools: 'Figma',
+  tools: 'Figma, Adobe Photoshop, Adobe Illustrator',
   description:
     'Home Service is a mobile app project I designed to simplify booking and managing a variety of home maintenance services, from cleaning to plumbing and electrical work. I began by interviewing homeowners and service providers to identify their needs and concerns. The design focused on building user trust and ease of use, with features like verified professionals, transparent pricing, and straightforward scheduling. The UI uses a warm, approachable color scheme and clear navigation, guiding users from selecting a service to confirming an appointment quickly and confidently.',
   hrNote: 'This project highlights my ability to design comprehensive service platforms that address real user concerns like safety and convenience. It demonstrates my skill in organizing diverse service information and creating a cohesive, trustworthy user experience. It also reflects my end-to-end design process from research to high-fidelity prototype.',
@@ -143,7 +143,7 @@ const projects = [
 {
   id: 'bikeservice',
   title: 'Bike Service – Mobile App UI/UX Design for Two-Wheeler Maintenance (Case Study)',
-  tools: 'Figma',
+  tools: 'Figma, Adobe Photoshop, Adobe Illustrator',
   description:
     'Bike Service is a full-scale mobile app project I designed to simplify scheduling and managing maintenance and repair services for two-wheeler owners. From the start, I approached this project by interviewing bikers and mechanics to understand common pain points in bike servicing. The app focuses on an intuitive booking flow, real-time status updates, and transparent pricing. The UI features clean iconography of bikes and services, progress indicators, and a streamlined workflow that guides users from selecting a service to booking in just a few taps.',
   hrNote: 'This project showcases my ability to design efficient mobile experiences for on-demand services and to translate user insights into practical features. It highlights my end-to-end UX process from research to high-fidelity design, and my skill in simplifying a complex service flow into a user-friendly interface.',
@@ -179,7 +179,7 @@ const projects = [
 {
   id: 'elite-wash',
   title: 'Elite Wash – Mobile App UI/UX Design for Laundry Services (Case Study)',
-  tools: 'Figma',
+  tools: 'Figma, Adobe Photoshop, Adobe Illustrator',
   description:
     'Elite Wash is a full scale mobile app project I designed to streamline the laundry booking experience in urban India. From day one, I approached this not just as a visual designer but as a problem solver starting with real user interviews and empathy mapping to uncover common frustrations in traditional laundry services. The design was focused on making the process fast, intuitive, and mobile first, ensuring every touchpoint from login to pickup confirmation was effortless. I created the full UX journey, wireframes, and visual design, all aligned to scalable design principles and responsive UI.',
   hrNote: 'This project showcases my ability to think holistically not just about UI, but about user needs, tech limitations, and brand clarity. It reflects my end to end capability, from UX research to pixel ready design delivery, with developer friendly documentation.',
@@ -204,7 +204,7 @@ const projects = [
    {
     id: 'astrology-landing-page',
     title: 'Astrology Landing Page Calm & Soulful UX Design',
-    tools: 'Figma, HTML, CSS',
+    tools: 'Figma, Adobe photoshop, HTML, CSS',
     description:
       'This landing page was crafted for a traditional Indian astrology institute with a focus on cultural authenticity and clear UX. We began by understanding the audience, recognizing that knowing who will use the site is key to effective design. Inspired by traditional iconography and warm, earthy colors, the design conveys trust and expertise. Complex astrological content like daily charts and birth calculators is organized in an intuitive hierarchy so users can find insights quickly. The site is mobile responsive, ensuring users can access horoscopes on any device. This project demonstrates thoughtful UX it educates visitors and builds trust in the astrologers’ knowledge.',
     hrNote:
@@ -216,8 +216,7 @@ const projects = [
       'Intuitive organization of complex spiritual content'
     ],
     images: [
-      '/images/projects/astrology/1.png',
-      '/images/projects/astrology/2.png'
+    '/images/projects/astrology/2.png'
     ]
   },
   {
@@ -268,79 +267,109 @@ const projects = [
 
   const project = selectedProject ? projects.find((p) => p.id === selectedProject) : null;  return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" data-linges="hero-section">
-        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Content */}
-          <div className="space-y-10">
-            <div className="space-y-10">
-              <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold leading-tight" data-linges="hero-title">
-                Hi, I&apos;m <span className="text-[#00FF7F]">Lingesvaran R.</span>
-              </h1>
-              <div className="space-y-14">
-              <h2 className="text-xl sm:text-2xl lg:text-2xl font-semibold text-gray-300" data-linges="hero-role">
-                I blend thoughtful design and smart development to craft user-first digital experiences.
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-400 max-w-xl leading-relaxed" data-linges="hero-description">
-                📍 Chennai,Tamil Nadu, India
-              </p>
-            </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                asChild 
-                className="bg-[#00FF7F] text-black hover:bg-[#00FF7F]/90 px-8 py-6 text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#00FF7F]/30"
-              >
-                <a href="mailto:linges.varan.rp@gmail.com" className="flex items-center gap-2">
-                  <Mail className="w-5 h-5" />
-                  Hire Me
-                </a>
-              </Button>
-              <Button 
-                variant="outline" 
-                asChild 
-                className="border-[#00FF7F] text-[#00FF7F] hover:bg-[#00FF7F] hover:text-black px-8 py-6 text-lg font-semibold transition-all duration-300"
-              >
-                <a href="https://linkedin.com/in/lingesvaran" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <Linkedin className="w-5 h-5" />
-                  View LinkedIn
-                </a>
-              </Button>
-            </div>
-          </div>
+{/* Hero Section - Redesigned Creatively */}
+<section
+  className="min-h-screen flex items-center justify-center bg-black text-white px-6"
+  data-linges="hero-section"
+>
+  <div className="text-center space-y-8 relative max-w-3xl w-full">
 
-          {/* Right Side - Creative Visualization */}
-   <div className="flex justify-center lg:justify-end">
-   <div className="relative w-64 sm:w-72 md:w-80 h-64 sm:h-72 md:h-80 flex items-center justify-center">
-    {/* Rotating Hexagon */}
-    <div className="absolute inset-0 border-2 border-[#00FF7F] rounded-lg transform rotate-45 animate-pulse" />
-    <div className="absolute inset-4 border border-[#00FF7F]/50 rounded-lg transform -rotate-45 animate-pulse delay-1000" />
-    <div className="absolute inset-8 border border-[#00FF7F]/30 rounded-lg transform rotate-45 animate-pulse delay-2000" />
+    {/* Floating Glow Background */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#00FF7F]/10 blur-3xl rounded-full animate-pulse z-0" />
 
-    {/* Floating Tools with Icons */}
-    <div className="absolute -top-6 -left-6 bg-[#1a1a1a] border border-[#00FF7F]/30 rounded-lg p-3 animate-bounce delay-1000">
-      <div className="w-6 h-6 bg-[#00FF7F] rounded flex items-center justify-center text-black text-lg">
-        <SiFigma />
+    {/* Content */}
+    <div className="relative z-10 space-y-6">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white">
+        Hello, I'm <span className="text-[#00FF7F]">Lingesvaran R.</span>
+      </h1>
+
+      <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight text-white">
+        UI/UX Designing & Development
+      </p>
+
+      <p className="text-lg sm:text-xl text-gray-400 max-w-xl mx-auto">
+        I design with empathy & build with clarity.
+      </p>
+
+      <p className="text-md sm:text-lg text-gray-500">
+        Welcome to my creative portfolio. Scroll down to explore my world of design & code 🚀
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+        <Button
+          asChild
+          className="bg-[#00FF7F] text-black hover:bg-[#00FF7F]/90 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#00FF7F]/30"
+        >
+          <a href="mailto:linges.varan.rp@gmail.com" className="flex items-center gap-2">
+            <Mail className="w-5 h-5" />
+            Hire Me
+          </a>
+        </Button>
+
+        <Button
+          variant="outline"
+          asChild
+          className="border-[#00FF7F] text-[#21b026] hover:bg-[#00FF7F] hover:text-black px-8 py-4 text-lg font-semibold transition-all duration-300"
+        >
+          <a
+            href="https://linkedin.com/in/lingesvaran"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2"
+          >
+            <Linkedin className="w-5 h-5" />
+            LinkedIn
+          </a>
+        </Button>
       </div>
     </div>
 
-    <div className="absolute -bottom-8 -right-8 bg-[#1a1a1a] border border-[#00FF7F]/30 rounded-lg p-3 animate-bounce delay-1000">
-      <div className="w-6 h-6 bg-[#00FF7F] rounded-full flex items-center justify-center text-black text-lg">
-        <SiHtml5 />
-        
-      </div>
+    {/* Scroll Down Hint */}
+    <div className="relative z-10 pt-10">
+      <p className="text-sm text-gray-400 animate-bounce">⬇️ Scroll to see my work</p>
     </div>
-              {/* Center Text */}
-              <div className="text-center z-10 mt-[-30px]">
-                <div className="text-[#00FF7F] text-1xl font-bold">UI/UX Designing</div>
-                <div className="text-gray-300 text-1xl">&</div>
-                <div className="text-[#00FF7F] text-1xl font-bold">Frontend Development</div>
-              </div>
-            </div>
+  </div>
+</section>
+
+
+    {/* Key Personal Projects – Visual Grid Showcase */}
+<section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="projects-section">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="projects-title">
+      Key Personal Projects
+    </h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <div
+          key={project.id}
+          className="group relative overflow-hidden rounded-xl border border-[#00FF7F]/20 hover:border-[#00FF7F]/60 transition-all duration-300 shadow hover:shadow-lg hover:shadow-[#00FF7F]/20 cursor-pointer"
+          onClick={() => {
+            setSelectedProject(project.id);
+            setCurrentImageIndex(0);
+          }}
+        >
+          {/* First Image as Preview */}
+          <img
+            src={project.images?.[0]}
+            alt={project.title}
+            className="w-full h-64 sm:h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+
+          {/* Overlay Title */}
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 text-center">
+            <h3 className="text-lg sm:text-xl font-bold text-[#00FF7F] leading-tight">
+              {project.title}
+            </h3>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
      {/* Unique About Section */}
 <section className="relative py-24 px-6 sm:px-10 bg-[#0e0e0e]" data-linges="about-unique">
@@ -458,45 +487,6 @@ const projects = [
           </div>
         </div>
       </section>
-
-      {/* Projects Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="projects-section">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="projects-title">
-            Key Personal Projects
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Card 
-                key={project.id}
-                className="bg-black border-[#00FF7F]/30 hover:border-[#00FF7F]/60 transition-all duration-300 cursor-pointer group hover:shadow-lg hover:shadow-[#00FF7F]/20"
-                onClick={() => {
-  setSelectedProject(project.id);
-  setCurrentImageIndex(0);
-}}
-
-              >
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-[#00FF7F] group-hover:text-[#00FF7F]/80 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-gray-400 font-medium">🛠️ {project.tools}</p>
-                    <p className="text-gray-300 text-sm line-clamp-3">{project.description}</p>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-[#00FF7F]/50 text-[#00FF7F] hover:bg-[#00FF7F] hover:text-black transition-all duration-300"
-                    >
-                      View Details
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 {/* Project Modal */}
 {project && (
   <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm text-white flex items-center justify-center p-4">
@@ -611,68 +601,66 @@ const projects = [
 )}
 
 
-      {/* Skills Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" data-linges="skills-section">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="skills-title">
-            Skills & Expertise
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-[#00FF7F] flex items-center gap-2">
-                🎨 Design Tools
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.design.map((skill) => (
-                  <Badge key={skill} variant="outline" className="border-[#00FF7F]/50 text-[#00FF7F] hover:bg-[#00FF7F]/20 transition-colors">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-[#00FF7F] flex items-center gap-2">
-                💻 Frontend Tech
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.frontend.map((skill) => (
-                  <Badge key={skill} variant="outline" className="border-[#00FF7F]/50 text-[#00FF7F] hover:bg-[#00FF7F]/20 transition-colors">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-[#00FF7F] flex items-center gap-2">
-                🧰 Creative Tools
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.creative.map((skill) => (
-                  <Badge key={skill} variant="outline" className="border-[#00FF7F]/50 text-[#00FF7F] hover:bg-[#00FF7F]/20 transition-colors">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-[#00FF7F] flex items-center gap-2">
-                🧠 Soft Skills
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.soft.map((skill) => (
-                  <Badge key={skill} variant="outline" className="border-[#00FF7F]/50 text-[#00FF7F] hover:bg-[#00FF7F]/20 transition-colors">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Skills & Expertise – Redesigned Creatively */}
+<section className="py-20 px-4 sm:px-6 lg:px-8 bg-black text-white" data-linges="skills-section">
+  <div className="max-w-7xl mx-auto text-center space-y-12">
+    <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F]">Skills & Expertise</h2>
+    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+      A well-rounded blend of product thinking, visual clarity, frontend logic, and human-centered design thinking.
+    </p>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+
+      {/* Skill Categories */}
+      <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#00FF7F]/20 shadow hover:shadow-[#00FF7F]/20 transition-all">
+        <h3 className="text-xl font-semibold text-[#00FF7F] mb-4">🎯 UX & UI Skills</h3>
+        <ul className="space-y-2 text-sm text-gray-300 list-disc list-inside">
+          <li>User Interface (UI) Design</li>
+          <li>User Experience (UX) Design</li>
+          <li>Wireframing & Prototyping</li>
+          <li>Responsive & Mobile-first Design</li>
+          <li>Design Systems</li>
+          <li>Human-Centered & Interaction Design</li>
+          <li>Micro-interaction & Visual Hierarchy</li>
+          <li>Typography & Layout</li>
+          <li>Color Theory in UI</li>
+          <li>UX Writing (Microcopy)</li>
+        </ul>
+      </div>
+
+      <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#00FF7F]/20 shadow hover:shadow-[#00FF7F]/20 transition-all">
+        <h3 className="text-xl font-semibold text-[#00FF7F] mb-4">🛠️ Tools</h3>
+        <ul className="space-y-2 text-sm text-gray-300 list-disc list-inside">
+          <li>Figma, Adobe XD, Sketch</li>
+          <li>Procreate, Canva (Quick Content)</li>
+          <li>Photoshop, Illustrator, Premiere Pro</li>
+          <li>Zeplin, GitHub</li>
+        </ul>
+      </div>
+
+      <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#00FF7F]/20 shadow hover:shadow-[#00FF7F]/20 transition-all">
+        <h3 className="text-xl font-semibold text-[#00FF7F] mb-4">💻 Technologies</h3>
+        <ul className="space-y-2 text-sm text-gray-300 list-disc list-inside">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript (Learning)</li>
+          <li>React.js (Learning)</li>
+          <li>Next.js (Learning)</li>
+        </ul>
+      </div>
+
+      <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#00FF7F]/20 shadow hover:shadow-[#00FF7F]/20 transition-all">
+        <h3 className="text-xl font-semibold text-[#00FF7F] mb-4">🌟 Personal Interests</h3>
+        <ul className="space-y-2 text-sm text-gray-300 list-disc list-inside">
+          <li>Drawing</li>
+          <li>Mentoring other designers</li>
+          <li>Freelancing & Collaboration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Education Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="education-section">
