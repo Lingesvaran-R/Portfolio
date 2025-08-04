@@ -117,6 +117,7 @@ const projects = [
     'Streamlined Scheduling Flow',
     'Clean, Trustworthy Interface'
   ],
+  thumbnail: "/images/thumbnails/home-service-thumb.png",
   images: [
     '/images/projects/home-service/1.png',
     '/images/projects/home-service/2.png',
@@ -153,6 +154,7 @@ const projects = [
     'Real-Time Progress Tracking',
     'Clear, Intuitive Iconography'
   ],
+  thumbnail: "/images/thumbnails/bikeservice-thumb.png",
   images: [
     '/images/projects/bikeservice/1.png',
     '/images/projects/bikeservice/2.png',
@@ -189,6 +191,7 @@ const projects = [
     'Mobile-First Responsive Architecture',
     'High-Fidelity Prototypes & Clean Visual System'
   ],
+  thumbnail: "/images/thumbnails/elitewash-thumb.png",
   images: [
     '/images/projects/elite-wash/1.png',
     '/images/projects/elite-wash/2.png',
@@ -215,6 +218,7 @@ const projects = [
       'Trust-focused branding and visual consistency',
       'Intuitive organization of complex spiritual content'
     ],
+    thumbnail: "/images/thumbnails/astrology-thumb.png",
     images: [
     '/images/projects/astrology/2.png'
     ]
@@ -233,6 +237,7 @@ const projects = [
       'Smart search and filtering for faster navigation',
       'One-click reorders with personalized food suggestions'
     ],
+    thumbnail: "/images/thumbnails/food-delivery-thumb.png",
     images: [
       '/images/projects/food/1.png'
     ]
@@ -251,6 +256,8 @@ const projects = [
       'Clear CTAs and conversion-friendly structure',
       'Visual trust-building with expert bios and testimonials'
     ],
+    thumbnail: "/images/thumbnails/learnlike-thumb.png", 
+
     images: [
       '/images/projects/learnlike/1.png',
       '/images/projects/learnlike/2.png'
@@ -333,42 +340,48 @@ const projects = [
 </section>
 
 
-    {/* Key Personal Projects – Visual Grid Showcase */}
+   {/* Key Projects - Thumbnail Grid Creative */}
 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="projects-section">
   <div className="max-w-7xl mx-auto">
-    <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="projects-title">
-      Key Personal Projects
+    {/* Small Heading */}
+    <h2 className="text-2xl sm:text-3xl font-semibold text-[#00FF7F] mb-10 text-center">
+      Key Projects
     </h2>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {/* Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project) => (
         <div
           key={project.id}
-          className="group relative overflow-hidden rounded-xl border border-[#00FF7F]/20 hover:border-[#00FF7F]/60 transition-all duration-300 shadow hover:shadow-lg hover:shadow-[#00FF7F]/20 cursor-pointer"
           onClick={() => {
             setSelectedProject(project.id);
             setCurrentImageIndex(0);
           }}
+          className="relative group cursor-pointer overflow-hidden rounded-xl border border-[#00FF7F]/20 hover:border-[#00FF7F]/50 transition-all duration-300 bg-black shadow hover:shadow-[#00FF7F]/20"
         >
-          {/* First Image as Preview */}
+          {/* Thumbnail Image */}
           <img
-            src={project.images?.[0]}
+            src={project.thumbnail}
             alt={project.title}
-            className="w-full h-64 sm:h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
           />
 
-          {/* Overlay Title */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 text-center">
-            <h3 className="text-lg sm:text-xl font-bold text-[#00FF7F] leading-tight">
-              {project.title}
-            </h3>
+          {/* Overlay on Desktop */}
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
+            <p className="text-sm sm:text-base text-[#00FF7F] font-medium bg-black/70 px-4 py-2 rounded-md border border-[#00FF7F]/30 shadow-md">
+              ✨ Tap to Explore
+            </p>
+          </div>
+
+          {/* Always visible cue for mobile */}
+          <div className="sm:hidden absolute bottom-0 left-0 right-0 bg-black/80 text-center py-2">
+            <p className="text-sm text-[#00FF7F] font-medium">✨ Tap to Explore</p>
           </div>
         </div>
       ))}
     </div>
   </div>
 </section>
-
 
 
      {/* Unique About Section */}
