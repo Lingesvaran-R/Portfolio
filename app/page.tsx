@@ -300,7 +300,7 @@ const projects = [
       </p>
 
       <p className="text-md sm:text-lg text-gray-500">
-        Welcome to my creative portfolio. Scroll down to explore my world of design & code 🚀
+        Welcome to my creative portfolio. Scroll down to explore my world of design 🚀
       </p>
 
       {/* CTA Buttons */}
