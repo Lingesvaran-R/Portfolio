@@ -138,7 +138,8 @@ const projects = [
     '/images/projects/home-service/17.png',
     '/images/projects/home-service/18.png',
     '/images/projects/home-service/19.png',
-    '/images/projects/home-service/20.png'
+    '/images/projects/home-service/20.png',
+    '/images/projects/home-service/21.png'
   ]
 },
 {
