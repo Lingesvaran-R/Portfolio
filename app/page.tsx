@@ -25,6 +25,8 @@ import Zoom from 'react-medium-image-zoom';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import 'react-medium-image-zoom/dist/styles.css';
 import { useEffect} from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBehance } from "@fortawesome/free-brands-svg-icons";
 
 
 
@@ -205,6 +207,125 @@ const projects = [
     '/images/projects/elite-wash/9.png'
   ]
 },
+{
+  id: 'learning-platform-ui',
+  title: 'Learning Platform UI – Simplified Visual Learning Experience',
+  tools: 'Figma, HTML, CSS',
+  description:
+    'This UI was crafted for an educational platform targeting self-learners and working professionals. The interface design prioritizes clarity and readability — using bold headings, clean content cards, and a minimal sidebar. Interactive learning cards display module titles, progress bars, and call-to-actions for smooth navigation. Each section is intentionally designed to reduce decision fatigue and increase time-on-task.',
+  hrNote:
+    'Showcases ability to design learning-focused interfaces with clear hierarchy, structured flow, and high user retention potential.',
+  highlights: [
+    'Content hierarchy optimized for self-paced learning',
+    'Clean layout with progress indicators and actionable cards',
+    'Modern, minimal design improving user attention span',
+    'Responsive design adaptable for both desktop and tablet'
+  ],
+  thumbnail: "/images/thumbnails/learning-thumb.png",
+  images: [
+    '/images/projects/learning-page/1.png'
+  ]
+},
+{
+  id: 'task-manager-dashboard',
+  title: 'Task Manager – Visual Workflow & Productivity Dashboard',
+  tools: 'Figma, HTML, CSS, JavaScript',
+  description:
+    'This dashboard was built for professionals to manage projects, tasks, and deadlines with ease. It features intuitive task cards, real-time progress tracking, and a clean calendar integration. I emphasized a minimal color palette and icon-based interactions to reduce clutter and enhance quick scanning. Each panel was designed with modularity in mind, supporting both drag-and-drop sorting and priority-based categorization.',
+  hrNote:
+    'Highlights ability to design functional productivity tools with emphasis on modular UX and business efficiency.',
+  highlights: [
+    'Task creation, tracking, and categorization in one screen',
+    'Drag-and-drop interface with smart prioritization logic',
+    'Minimal dashboard layout with clean hierarchy',
+    'Adaptive grid system for large-scale project handling'
+  ],
+  thumbnail: "/images/thumbnails/task-manager-thumb.png",
+  images: [
+    '/images/projects/task-manager/1.jpg',
+    '/images/projects/task-manager/2.jpg',
+    '/images/projects/task-manager/3.jpg',
+    '/images/projects/task-manager/4.png'
+  ]
+},
+{
+  id: 'techtrace-cyber-ui',
+  title: 'Techtrace – Cybersecurity Web UI with Corporate Feel',
+  tools: 'Figma, HTML, CSS',
+  description:
+    'Designed for a B2B cybersecurity firm, this interface offers enterprise clients a sense of trust and clarity. The site features structured sections explaining services, with iconography and illustrations supporting complex ideas. UI patterns were chosen to feel authoritative yet modern, with blue gradients and card-based layouts making navigation smooth. I integrated subtle interactions that reflect high-tech branding and future-readiness.',
+  hrNote:
+    'Demonstrates capability to design business-critical platforms with high trustworthiness and informative flow.',
+  highlights: [
+    'Clean, business-friendly UI to present technical services',
+    'Trust-driven layout with secure color tones and typography',
+    'Smart cards, testimonials, and contact CTAs that convert',
+    'High responsiveness for desktop, tablet, and mobile'
+  ],
+  thumbnail: "/images/thumbnails/techtrace-thumb.png",
+  images: [
+    '/images/projects/techtrace/1.png',
+    '/images/projects/techtrace/2.png'
+  ]
+},
+{
+  id: 'archbox-construction-landing',
+  title: 'Archbox – Modern Architecture Firm Landing Page',
+  tools: 'Figma, HTML, CSS',
+  description:
+    'This landing page was created for an architectural design firm to attract clients and showcase their work. It uses bold hero sections with real architectural visuals, clean serif fonts for elegance, and a well-structured information flow. The design captures both trust and creativity through layout contrast and balanced whitespace. Animated scroll effects and contact forms complete the experience.',
+  hrNote:
+    'Highlights design skills in aesthetic-driven landing pages for creative and commercial sectors.',
+  highlights: [
+    'Elegant layout with strong visual storytelling',
+    'Architectural imagery paired with modern typography',
+    'CTA sections encouraging inquiries and appointments',
+    'Balance of structure and design creativity'
+  ],
+  thumbnail: "/images/thumbnails/archbox-thumb.png",
+  images: [
+    '/images/projects/archbox/1.png'
+  ]
+},
+{
+  id: 'analytics-dashboard-ui',
+  title: 'Analytics Dashboard – Data Visualization for Business Insights',
+  tools: 'Figma, HTML, CSS, JavaScript',
+  description:
+    'Designed a high-functioning analytics dashboard that turns raw data into clear visual insights. It features real-time graphs, key performance indicators (KPIs), and filterable data tables. A neutral color palette with bright accent highlights ensures clarity while keeping the interface distraction-free. Charts are built for instant interpretation using bar, line, and donut formats. Ideal for decision-makers seeking a quick overview of complex metrics.',
+  hrNote:
+    'Showcases skills in presenting complex data in a digestible, actionable format for stakeholders.',
+  highlights: [
+    'Real-time data visualization with filterable insights',
+    'Intuitive dashboard grid with flexible components',
+    'Minimal distractions for clear business interpretation',
+    'Scalable architecture for future data integrations'
+  ],
+  thumbnail: "/images/thumbnails/analytics-thumb.png",
+  images: [
+    '/images/projects/dashboard/1.jpg'
+  ]
+},
+{
+  id: 'game-dashboard-ui',
+  title: 'Game Dashboard – Gamified Interface for Player Engagement',
+  tools: 'Figma, HTML, CSS, JavaScript',
+  description:
+    'Built a UI for a game dashboard that reflects fun, competition, and progress tracking. The design features bold visuals, neon gradients, avatar badges, and leaderboard-style cards. Progress bars, XP meters, and badge unlocks drive engagement. The design leverages micro-interactions and bright color theory to attract and retain player attention.',
+  hrNote:
+    'Highlights strength in creating visually dynamic interfaces aligned with user engagement goals.',
+  highlights: [
+    'Gamified progress design with intuitive visuals',
+    'Leaderboards, XP trackers, and reward systems',
+    'Bold and interactive style using neon themes',
+    'Responsive layout designed for tablets and desktops'
+  ],
+  thumbnail: "/images/thumbnails/game-dashboard-thumb.png",
+  images: [
+    '/images/projects/game-dashboard/1.png',
+    '/images/projects/game-dashboard/2.png'
+  ]
+},
    {
     id: 'astrology-landing-page',
     title: 'Astrology Landing Page Calm & Soulful UX Design',
@@ -303,35 +424,55 @@ const projects = [
         Welcome to my creative portfolio. Scroll down to explore my world of design 🚀
       </p>
 
-      {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-        <Button
-          asChild
-          className="bg-[#00FF7F] text-black hover:bg-[#00FF7F]/90 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#00FF7F]/30"
-        >
-          <a href="mailto:linges.varan.rp@gmail.com" className="flex items-center gap-2">
-            <Mail className="w-5 h-5" />
-            Hire Me
-          </a>
-        </Button>
+     {/* CTA Buttons - Modern, 3 Button Layout */}
+<div className="flex flex-col sm:flex-row justify-center gap-4 pt-6">
+  {/* Hire Me */}
+  <Button
+    asChild
+    className="bg-[#ffffff] text-black hover:bg-[#00FF7F]/90 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#00FF7F]/30 rounded-xl"
+  >
+    <a href="mailto:linges.varan.rp@gmail.com" className="flex items-center gap-2">
+      <Mail className="w-5 h-5" />
+      Hire Me
+    </a>
+  </Button>
 
-        <Button
-          variant="outline"
-          asChild
-          className="border-[#00FF7F] text-[#21b026] hover:bg-[#00FF7F] hover:text-black px-8 py-4 text-lg font-semibold transition-all duration-300"
-        >
-          <a
-            href="https://linkedin.com/in/lingesvaran"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <Linkedin className="w-5 h-5" />
-            LinkedIn
-          </a>
-        </Button>
-      </div>
-    </div>
+  {/* LinkedIn */}
+  <Button
+    variant="outline"
+    asChild
+    className="border-[#00FF7F] text-[#1d991f] hover:bg-[#00FF7F] hover:text-black px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-xl"
+  >
+    <a
+      href="https://linkedin.com/in/lingesvaran"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2"
+    >
+      <Linkedin className="w-5 h-5" />
+      LinkedIn
+    </a>
+  </Button>
+
+  {/* Behance */}
+  <Button
+    variant="outline"
+    asChild
+    className="border-[#00FF7F] text-[#0026ff] hover:bg-[#00FF7F] hover:text-black px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-xl"
+  >
+    <a
+      href="https://www.behance.net/lingesvaran"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2"
+    >
+      <ExternalLink className="w-5 h-5" />
+      Behance
+    </a>
+  </Button>
+</div>
+</div>
+
 
     {/* Scroll Down Hint */}
     <div className="relative z-10 pt-10">
@@ -784,42 +925,68 @@ const projects = [
                 </form>
               </CardContent>
             </Card>
-            
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#00FF7F]/30">
-                  <Mail className="w-6 h-6 text-[#00FF7F]" />
-                  <div>
-                    <p className="font-medium text-white">Email</p>
-                    <a href="mailto:linges.varan.rp@gmail.com" className="text-gray-400 hover:text-[#00FF7F] transition-colors">
-                      linges.varan.rp@gmail.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#00FF7F]/30">
-                  <Phone className="w-6 h-6 text-[#00FF7F]" />
-                  <div>
-                    <p className="font-medium text-white">Phone</p>
-                    <a href="tel:+918248869776" className="text-gray-400 hover:text-[#00FF7F] transition-colors">
-                      +91 8248869776
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#00FF7F]/30">
-                  <Linkedin className="w-6 h-6 text-[#00FF7F]" />
-                  <div>
-                    <p className="font-medium text-white">LinkedIn</p>
-                    <a href="https://linkedin.com/in/lingesvaran" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#00FF7F] transition-colors">
-                      Connect with me
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Contact Info */}
+<div className="space-y-8">
+  <div className="space-y-6">
+    
+    {/* Email */}
+    <div className="flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#00FF7F]/30 hover:shadow-lg hover:shadow-[#00FF7F]/20 transition-all">
+      <Mail className="w-6 h-6 text-[#00FF7F]" />
+      <div>
+        <p className="font-medium text-white">Email</p>
+        <a href="mailto:linges.varan.rp@gmail.com" className="text-gray-400 hover:text-[#00FF7F] transition-colors">
+          linges.varan.rp@gmail.com
+        </a>
+      </div>
+    </div>
+
+    {/* Phone */}
+    <div className="flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#00FF7F]/30 hover:shadow-lg hover:shadow-[#00FF7F]/20 transition-all">
+      <Phone className="w-6 h-6 text-[#00FF7F]" />
+      <div>
+        <p className="font-medium text-white">Phone</p>
+        <a href="tel:+918248869776" className="text-gray-400 hover:text-[#00FF7F] transition-colors">
+          +91 8248869776
+        </a>
+      </div>
+    </div>
+
+    {/* LinkedIn */}
+    <div className="flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#00FF7F]/30 hover:shadow-lg hover:shadow-[#00FF7F]/20 transition-all">
+      <Linkedin className="w-6 h-6 text-[#00FF7F]" />
+      <div>
+        <p className="font-medium text-white">LinkedIn</p>
+        <a
+          href="https://linkedin.com/in/lingesvaran"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-[#00FF7F] transition-colors"
+        >
+          Connect with me
+        </a>
+      </div>
+    </div>
+
+    {/* Behance */}
+    <div className="flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#00FF7F]/30 hover:shadow-lg hover:shadow-[#00FF7F]/20 transition-all">
+      <div className="w-6 h-6 text-[#00FF7F] flex items-center justify-center">
+        <FontAwesomeIcon icon={faBehance} className="w-5 h-5" />
+      </div>
+      <div>
+        <p className="font-medium text-white">Behance</p>
+        <a
+          href="https://www.behance.net/lingesvaranr22"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-[#00FF7F] transition-colors"
+        >
+          View My Work
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
         </div>
       </section>
 
