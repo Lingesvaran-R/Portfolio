@@ -400,7 +400,7 @@ const projects = [
 {/* Sticky Navbar */}
 <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-[#00FF7F]/20 shadow-lg">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-    <h1 className="text-[#00FF7F] text-xl font-bold">Lingesvaran R</h1>
+    <h1 className="text-[#00FF7F] text-xl font-bold">✨ Welcome!</h1>
     <nav className="space-x-4 hidden sm:flex">
       <a href="#hero" className="text-gray-300 hover:text-[#00FF7F] transition-colors text-sm font-medium">Home</a>
       <a href="#projects" className="text-gray-300 hover:text-[#00FF7F] transition-colors text-sm font-medium">Projects</a>
