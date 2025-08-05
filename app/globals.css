@@ -113,6 +113,12 @@ body > nextjs-portal {
 .animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
 }
+html {
+  scroll-behavior: smooth;
+}
+.scroll-offset {
+  scroll-margin-top: 6rem;
+}
 
 
 

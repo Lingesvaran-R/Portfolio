@@ -396,11 +396,26 @@ const projects = [
 
   const project = selectedProject ? projects.find((p) => p.id === selectedProject) : null;  return (
     <div className="min-h-screen bg-black text-white">
+
+{/* Sticky Navbar */}
+<header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-[#00FF7F]/20 shadow-lg">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+    <h1 className="text-[#00FF7F] text-xl font-bold">Lingesvaran R</h1>
+    <nav className="space-x-4 hidden sm:flex">
+      <a href="#hero" className="text-gray-300 hover:text-[#00FF7F] transition-colors text-sm font-medium">Home</a>
+      <a href="#projects" className="text-gray-300 hover:text-[#00FF7F] transition-colors text-sm font-medium">Projects</a>
+      <a href="#about" className="text-gray-300 hover:text-[#00FF7F] transition-colors text-sm font-medium">About</a>
+      <a href="#experience" className="text-gray-300 hover:text-[#00FF7F] transition-colors text-sm font-medium">Experience</a>
+      <a href="#contact" className="text-gray-300 hover:text-[#00FF7F] transition-colors text-sm font-medium">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
 {/* Hero Section - Redesigned Creatively */}
-<section
-  className="min-h-screen flex items-center justify-center bg-black text-white px-6"
-  data-linges="hero-section"
->
+<section id="hero"
+  className="scroll-offset min-h-screen flex items-center justify-center bg-black text-white px-6"
+  data-linges="hero-section">
   <div className="text-center space-y-8 relative max-w-3xl w-full">
 
     {/* Floating Glow Background */}
@@ -483,7 +498,7 @@ const projects = [
 
 
    {/* Key Projects - Thumbnail Grid Creative */}
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="projects-section">
+<section id="projects" className="scroll-offset py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="projects-section">
   <div className="max-w-7xl mx-auto">
     {/* Small Heading */}
     <h2 className="text-2xl sm:text-3xl font-semibold text-[#00FF7F] mb-10 text-center">
@@ -527,7 +542,7 @@ const projects = [
 
 
      {/* Unique About Section */}
-<section className="relative py-24 px-6 sm:px-10 bg-[#0e0e0e]" data-linges="about-unique">
+<section id="about" className="scroll-offset relative py-24 px-6 sm:px-10 bg-[#0e0e0e]" data-linges="about-unique">
   <div className="max-w-6xl mx-auto relative z-10">
     {/* Section Heading */}
     <div className="text-center mb-16">
@@ -579,7 +594,7 @@ const projects = [
 
 
       {/* Professional Experience Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" data-linges="experience-section">
+      <section id="experience" className="scroll-offset py-20 px-4 sm:px-6 lg:px-8" data-linges="experience-section">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="experience-title">
             Professional Experience
@@ -757,7 +772,7 @@ const projects = [
 
 
     {/* Skills & Expertise – Redesigned Creatively */}
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-black text-white" data-linges="skills-section">
+<section className="scroll-offset py-20 px-4 sm:px-6 lg:px-8 bg-black text-white" data-linges="skills-section">
   <div className="max-w-7xl mx-auto text-center space-y-12">
     <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F]">Skills & Expertise</h2>
     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
@@ -818,7 +833,7 @@ const projects = [
 
 
       {/* Education Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="education-section">
+      <section className="scroll-offset py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]" data-linges="education-section">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="education-title">
             Education & Certifications
@@ -873,7 +888,7 @@ const projects = [
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" data-linges="contact-section">
+      <section id="contact" className="scroll-offset py-20 px-4 sm:px-6 lg:px-8" data-linges="contact-section">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF7F] mb-12 text-center" data-linges="contact-title">
             Let&apos;s Connect
