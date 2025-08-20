@@ -476,7 +476,7 @@ const projects = [
     className="border-[#00FF7F] text-[#0026ff] hover:bg-[#00FF7F] hover:text-black px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-xl"
   >
     <a
-      href="https://www.behance.net/lingesvaran22"
+      href="https://www.behance.net/lingesvaranr22"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-2"
