@@ -428,7 +428,7 @@ const projects = [
       </h1>
 
       <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight text-white">
-        UI/UX Designing & Development
+        UI/UX Designer
       </p>
 
       <p className="text-lg sm:text-xl text-gray-400 max-w-xl mx-auto">
@@ -575,7 +575,7 @@ const projects = [
             </p>
 
             <p>
-              Today, with <span className="text-[#00FF7F] font-semibold">2+ years</span> of real world experience in UI/UX design and frontend development, I focus on building digital experiences that are both visually compelling and deeply usable. Whether it's a dashboard, a service app, or a landing page, I prioritize function over fluff  <span className="text-[#00FF7F] font-semibold">clarity</span>, not just decoration.
+              Today, with <span className="text-[#00FF7F] font-semibold">2+ years</span> of real world experience in UI/UX design and Product designing, I focus on building digital experiences that are both visually compelling and deeply usable. Whether it's a dashboard, a service app, or a landing page, I prioritize function over fluff  <span className="text-[#00FF7F] font-semibold">clarity</span>, not just decoration.
             </p>
 
             <p>
@@ -607,7 +607,7 @@ const projects = [
                 <div className="space-y-6">
                   <div className="border-b border-[#00FF7F]/20 pb-4">
                     <h3 className="text-2xl font-bold text-[#00FF7F]">Cybervault Innovation and Technologies Pvt Ltd</h3>
-                    <p className="text-xl text-gray-300 mt-2">UI/UX Designer & Frontend Developer</p>
+                    <p className="text-xl text-gray-300 mt-2">UI/UX Designer | Product designing</p>
                     <p className="text-gray-400 mt-1">📍 Coimbatore | Apr 2024 – Present</p>
                   </div>
                   
@@ -811,11 +811,8 @@ const projects = [
       <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#00FF7F]/20 shadow hover:shadow-[#00FF7F]/20 transition-all">
         <h3 className="text-xl font-semibold text-[#00FF7F] mb-4">💻 Technologies</h3>
         <ul className="space-y-2 text-sm text-gray-300 list-disc list-inside">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript (Learning)</li>
-          <li>React.js (Learning)</li>
-          <li>Next.js (Learning)</li>
+          <li>HTML5 (Learning) </li>
+          <li>CSS3 (Learning) </li>
         </ul>
       </div>
 
@@ -876,7 +873,7 @@ const projects = [
               <Card className="bg-black border-[#00FF7F]/30 hover:border-[#00FF7F]/60 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-white">UI/UX Designing & Development</h4>
+                    <h4 className="font-semibold text-white">Advanced UI/UX Designing and Development </h4>
                     <p className="text-gray-400">FITA Academy, Anna Nagar</p>
                     <p className="text-sm text-[#00FF7F]">2023</p>
                   </div>
